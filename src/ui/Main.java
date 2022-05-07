@@ -1,11 +1,13 @@
 package ui;
 
 import java.util.Scanner;
+import model.Counselor;
 
 
 public class Main {
 	
 	private Scanner sc;
+	private Counselor cs;
 	
 	
 	public Main() {

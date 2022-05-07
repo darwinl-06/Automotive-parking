@@ -1,20 +1,24 @@
 package model;
 
-public class GasolineCar extends Car {
+public class GasolineCar extends Car implements GasolineConsumption {
 
     private double tankCapacity;
     private GasolineType gasolineType;
-    private double oilConsume;
 
     public GasolineCar(double basePrice, double price, String brand, String model, String cylinder, int mileage,
-            String plate, CarType type, int numDoors, boolean isPolarized, double tankCapacity, GasolineType gasolineType, double oilConsume) {
+            String plate, CarType type, int numDoors, boolean isPolarized, double tankCapacity, GasolineType gasolineType) {
 
         super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized);
         this.tankCapacity = tankCapacity;
         this.gasolineType = gasolineType;
-        this.oilConsume = oilConsume;
     }
 
+    @Override
+    public double gasolineConsumption() {
+
+        return 0;
+    }
+    
     public double getTankCapacity() {
         return tankCapacity;
     }
@@ -31,18 +35,12 @@ public class GasolineCar extends Car {
         this.gasolineType = gasolineType;
     }
 
-    public double getOilConsume() {
-        return oilConsume;
-    }
-
-    public void setOilConsume(double oilConsume) {
-        this.oilConsume = oilConsume;
-    }
-
     @Override
     public String toString() {
-        return "gasolineType=" + gasolineType + ", oilConsume=" + oilConsume + ", tankCapacity=" + tankCapacity;
+        return "gasolineType=" + gasolineType + ", tankCapacity=" + tankCapacity;
     }
+
+    
 
     
 

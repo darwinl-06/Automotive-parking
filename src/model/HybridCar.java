@@ -4,22 +4,19 @@ public class HybridCar extends Car {
 
     private ChargerType chargerType;
     private double batteryLife;
-    private double batteryConsumption;
     private double tankCapacity;
     private GasolineType gasolineType;
-    private double oilConsume;
 
     public HybridCar(double basePrice, double price, String brand, String model, String cylinder, int mileage,
             String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife,
-            double batteryConsumption, double tankCapacity, GasolineType gasolineType, double oilConsume) {
+            double tankCapacity, GasolineType gasolineType) {
 
         super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized);
         this.chargerType = chargerType;
         this.batteryLife = batteryLife;
-        this.batteryConsumption = batteryConsumption;
         this.tankCapacity = tankCapacity;
         this.gasolineType = gasolineType;
-        this.oilConsume = oilConsume;
+    
     }
 
     public ChargerType getChargerType() {
@@ -38,14 +35,6 @@ public class HybridCar extends Car {
         this.batteryLife = batteryLife;
     }
 
-    public double getBatteryConsumption() {
-        return batteryConsumption;
-    }
-
-    public void setBatteryConsumption(double batteryConsumption) {
-        this.batteryConsumption = batteryConsumption;
-    }
-
     public double getTankCapacity() {
         return tankCapacity;
     }
@@ -62,19 +51,10 @@ public class HybridCar extends Car {
         this.gasolineType = gasolineType;
     }
 
-    public double getOilConsume() {
-        return oilConsume;
-    }
-
-    public void setOilConsume(double oilConsume) {
-        this.oilConsume = oilConsume;
-    }
-
     @Override
     public String toString() {
-        return "batteryConsumption=" + batteryConsumption + ", batteryLife=" + batteryLife + ", chargerType="
-                + chargerType + ", gasolineType=" + gasolineType + ", oilConsume=" + oilConsume + ", tankCapacity="
-                + tankCapacity;
+        return ", batteryLife=" + batteryLife + ", chargerType="
+                + chargerType + ", gasolineType=" + gasolineType +  ", tankCapacity=" + tankCapacity;
     }
 
     

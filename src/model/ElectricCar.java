@@ -1,18 +1,23 @@
 package model;
 
-public class ElectricCar extends Car {
+public class ElectricCar extends Car implements BatteryConsumption {
 
     private ChargerType chargerType;
     private double batteryLife;
-    private double batteryConsumption;
 
     public ElectricCar(double basePrice, double price, String brand, String model, String cylinder, int mileage,
-            String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife, double batteryConsumption) {
+            String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife) {
         
         super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized);
         this.chargerType = chargerType;
         this.batteryLife = batteryLife;
-        this.batteryConsumption = batteryConsumption;
+        
+    }
+
+    @Override
+    public double batteryConsumption() {
+     
+        return 0;
     }
 
     public ChargerType getChargerType() {
@@ -31,23 +36,10 @@ public class ElectricCar extends Car {
         this.batteryLife = batteryLife;
     }
 
-    public double getBatteryConsumption() {
-        return batteryConsumption;
-    }
-
-    public void setBatteryConsumption(double batteryConsumption) {
-        this.batteryConsumption = batteryConsumption;
-    }
-
     @Override
     public String toString() {
-        return "batteryConsumption=" + batteryConsumption + ", batteryLife=" + batteryLife
-                + ", chargerType=" + chargerType;
+        return ", batteryLife=" + batteryLife + ", chargerType=" + chargerType;
     }
-
-    
-
-    
 
 
 }
