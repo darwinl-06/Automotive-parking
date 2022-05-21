@@ -82,6 +82,7 @@ public class Main {
 		}
 	}
 
+	//Method to register a vehicle
 	public void registerVehicle() {
 
         System.out.println("Ingrese el precio base del vehiculo ");
@@ -242,6 +243,7 @@ public class Main {
 		}	
 	}
 
+	//Method to register the SOAT
 	public void regisSoat(int id) {
         System.out.println("Ingrese el precio del SOAT");
 		double price =sc.nextDouble();
@@ -255,6 +257,7 @@ public class Main {
         cs.addDocumentSoat(id,price, year, cover );
     }
 
+	//Method to register the tecnhical review
     public void regisReview(int id) {
 		System.out.println("Ingrese el precio de la revision tecnico mecanica");
 		double price =sc.nextDouble();
@@ -268,6 +271,7 @@ public class Main {
         cs.addDocumentReview(id, price, year, gasLevels);
     }
 
+	//Mehod to register the property card
     public void regisCard(int id) {
 
         System.out.println("Ingrese el precio dela tarjeta de propiedad");
@@ -278,8 +282,8 @@ public class Main {
      
         cs.addDocumentCard(id, price,year);
     }
-    
-
+	
+	//Mehotd to calculate the sale price
 	public void calculatePrice() {
 
 		System.out.println("Ingrese el id del vehiculo del que quiere saber el precio de venta");
@@ -288,7 +292,7 @@ public class Main {
 		System.out.println(cs.calculateSalePrice(id));
 	}
 	
-
+	//Method to show information of a vehicle
 	public void showReports() { 
     
         System.out.println("Como quiere generar el informe 1. Tipo de vehiculo 2. Tipo de combusible 3. Carro nuevo o usado");
@@ -316,6 +320,7 @@ public class Main {
         }
     }
 
+	//Method to show the documents of a vehicle
 	public void showDocuments() {
         System.out.println("Ingrese el id del vehiculo del cual quiere ver sus documentos");
         int id = sc.nextInt();
@@ -324,12 +329,14 @@ public class Main {
         
     }
 
+	//Method to show the map pf the parking
 	public void showParking() {
 
 		System.out.println(cs.showMapParking());
 
 	}
 
+	//Method to show information of a vehicle
 	public void showReportsParking() { 
     
         System.out.println("Como quiere generar el informe 1. Dado un rango de años 2. Vehículo más antiguo y más nuevo. 3. Porcentaje de ocupación del parqueadero");
