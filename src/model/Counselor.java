@@ -452,7 +452,7 @@ public class Counselor {
         return out;
     }
 
-     
+    //Method to show the percentage of occupation of the parking
     public String showPercentageOccupation() {
 
         return parking.showOccupation() + "%";
