@@ -438,9 +438,9 @@ public class Counselor {
         return out;
     }
 
-    public String showPercentageOcupation() {
+    public String showPercentageOccupation() {
 
-        return parking.showOcupation() + "%";
+        return parking.showOccupation() + "%";
     }
 
     

@@ -175,7 +175,7 @@ public class Parking {
         return out;
     }
 
-    public double showOcupation() {
+    public double showOccupation() {
         double cont = 0;
         for (int i = 0; i < parking.length; i++) {
             for (int j = 0; j < parking[0].length; j++) {

@@ -350,7 +350,7 @@ public class Main {
     
                 break;
             case 3:  
-                System.out.println(cs.showPercentageOcupation());
+                System.out.println(cs.showPercentageOccupation());
                 break;
         }
     }
