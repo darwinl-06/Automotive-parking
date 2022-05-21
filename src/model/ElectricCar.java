@@ -14,6 +14,7 @@ public class ElectricCar extends Car implements BatteryConsumption {
         
     }
 
+    //Method fot calculating the price of sale of the car
     public double calculateSalePrice() {
         
         double price= super.getBasePrice() * 1.20;
@@ -27,7 +28,7 @@ public class ElectricCar extends Car implements BatteryConsumption {
         return price;
     }
     
-
+    //Method to calculate battery consumption
     @Override
     public double batteryConsumption() {
 
@@ -59,7 +60,7 @@ public class ElectricCar extends Car implements BatteryConsumption {
 
     @Override
     public String toString() {
-        return super.toString() + "\n , Duracion de bateria = " + batteryLife + "\n , Tipo de cargador = " + chargerType + "\n";
+        return super.toString() + "\n , Duracion de bateria = " + batteryLife + "\n , Tipo de cargador = " + chargerType + "\n, Consumo de bateria = " + batteryConsumption() + "\n";
     }
     
 

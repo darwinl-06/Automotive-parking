@@ -29,6 +29,8 @@ public class Vehicle {
   
     }
 
+
+    //Method to add soat document
     public boolean addDocument(Soat document) {
 
         documents[0]= document;
@@ -36,6 +38,7 @@ public class Vehicle {
         return true;
     }
 
+    //Method to add technical review document
     public boolean addDocument(TechnicalReview document) {
         
         documents[1]= document;
@@ -43,6 +46,7 @@ public class Vehicle {
         return true;
     }
 
+    //Method to add property card document
     public boolean addDocument(PropertyCard document) {
         
         documents[2]= document;

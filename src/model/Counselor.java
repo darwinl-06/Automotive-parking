@@ -14,6 +14,7 @@ public class Counselor {
     }
     
 
+    //Method to add a new vehicle
     public int addVehicle(double basePrice, double price, String brand, int model, double cylinder, double mileage,int optionVehicle, String licensePlate, 
     int numDoors, boolean isPolarized, int optionCar, double tankCapacity, int optionGasoline) {
         
@@ -56,6 +57,7 @@ public class Counselor {
         return vehicles.indexOf(gasolineCar);
     }
     
+    //Method to add a new vehicle
     public int addVehicle(double basePrice, double price, String brand, int model, double cylinder, double mileage, int optionVehicle, 
     String licensePlate, int numDoors, boolean isPolarized, int optionCar, int optionCharger, double batteryLife) {
         
@@ -104,6 +106,7 @@ public class Counselor {
         return vehicles.indexOf(electricCar);
     }
 
+    //Method to add a new vehicle
     public int addVehicle(double basePrice, double price, String brand, int model, double cylinder, double mileage, int optionVehicle, String licensePlate, int numDoors, boolean isPolarized, int optionTypeCar, double tankCapacity, double batteryLife, int optionCharger, int optionGasoline){
        
         TypeVehicle vehicleType;
@@ -163,7 +166,8 @@ public class Counselor {
         parking.addVehicleToParking(hybridCar);
         return vehicles.indexOf(hybridCar);
     }
-    
+
+    //Method to add a new vehicle
     public int addVehicle(double basePrice, double price, String brand, int model, double cylinderCapacity, double mileage, 
     int optionTypeVehicle, String licensePlate, double tankCapacity, int optionTypeMotorcycle) {
 
@@ -208,7 +212,7 @@ public class Counselor {
         return vehicles.indexOf(motorcycle);        
     }
 
-    
+    //Method to add a new SOAT document
     public void addDocumentSoat(int id, double price, int year, double coverage) {
 
         Soat soat = new Soat(price, year, coverage);
@@ -218,6 +222,7 @@ public class Counselor {
           
     }
 
+    //Method to add a new technical review  document
     public void addDocumentReview(int id, double price, int year, double gasLevels) {
 
         TechnicalReview technicalReview = new TechnicalReview(price, year,gasLevels );
@@ -227,6 +232,7 @@ public class Counselor {
         
     }
 
+    //Method to add a new property card document
     public void addDocumentCard(int id, double price, int year) {
 
         PropertyCard propertyCard = new PropertyCard(price, year);
@@ -236,6 +242,7 @@ public class Counselor {
        
     }
 
+    //Method to calculate the sale price of a vehicle by the id
     public String calculateSalePrice(int id) {
         String out = "";
 
@@ -247,6 +254,7 @@ public class Counselor {
         return out;
     } 
 
+    //Method to show informaction ofa vehicle by the type
     public String showReportsTypeVehicle(int option ) {
 
         String out = "";
@@ -289,6 +297,7 @@ public class Counselor {
         return out;
     }
 
+    //Method to show informaction ofa vehicle by the type of fuel
     public String showReportsTypeFuel(int option ) {
         
         String out = "";
@@ -356,6 +365,7 @@ public class Counselor {
         return out;
     }
 
+    //Method to show informaction ofa vehicle by the state
     public String showReportsUse(int option ) {
 
         String out = "";
@@ -382,6 +392,7 @@ public class Counselor {
         return out;
     }
 
+    //Method to show informaction of the documents of a vehicle by the id
     public String showDocuments(int id) {
         String out = "";
 
@@ -412,16 +423,19 @@ public class Counselor {
         return out;
     }
 
+    //Method to show the parking map
     public String showMapParking() {
 
         return parking.printParking();
     }
 
+    //Method to show information of a vehicle by the model
     public String showReportsParkingYears( int option) { 
 
         return parking.showParkingYear(option);
     }
 
+    //Method to show information of a vehicle by the state
     public String showReportsParkingUse(int option) {
 
         String out = "";
@@ -438,6 +452,7 @@ public class Counselor {
         return out;
     }
 
+    //Method to show the percentage of occupation of the parking
     public String showPercentageOccupation() {
 
         return parking.showOccupation() + "%";

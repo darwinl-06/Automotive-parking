@@ -13,6 +13,7 @@ public class GasolineCar extends Car implements GasolineConsumption {
         this.gasolineType = gasolineType;
     }
 
+    //Method to calcule the sale price of the car
     public double calculateSalePrice() {
         
         double price= super.getBasePrice();
@@ -26,6 +27,7 @@ public class GasolineCar extends Car implements GasolineConsumption {
         return price;
     }
 
+    //Method to calculate the gasoline consumption
     @Override
     public double gasolineConsumption() {
 
@@ -52,7 +54,7 @@ public class GasolineCar extends Car implements GasolineConsumption {
 
     @Override
     public String toString() {
-        return super.toString() + "\n , Tipo de combustible = " + gasolineType + "\n , Capacidad del tanque = " + tankCapacity + "\n";
+        return super.toString() + "\n , Tipo de combustible = " + gasolineType + "\n , Capacidad del tanque = " + tankCapacity + "\n, Consumo de gasolina = " + gasolineConsumption() + "\n";
     }
 
     

@@ -19,6 +19,7 @@ public class HybridCar extends Car implements GasolineConsumption, BatteryConsum
     
     }
 
+    //Method fot calculating the price of sale of the car
     public double calculateSalePrice() {
 
         double price= super.getBasePrice() * 1.15;
@@ -32,6 +33,7 @@ public class HybridCar extends Car implements GasolineConsumption, BatteryConsum
         return price;
     }
 
+    //Method to calculate battery consumption
     @Override
     public double batteryConsumption() {
 
@@ -46,7 +48,8 @@ public class HybridCar extends Car implements GasolineConsumption, BatteryConsum
     }
 
 
-     @Override
+    //Method to calculate the gasoline consumption
+    @Override
     public double gasolineConsumption() {
 
         double consumption = tankCapacity *(super.getCylinder()/180);
@@ -90,7 +93,7 @@ public class HybridCar extends Car implements GasolineConsumption, BatteryConsum
     @Override
     public String toString() {
         return super.toString() + "\n , Duracion de bateria = " + batteryLife + "\n , Tipo de cargador = "
-                + chargerType + "\n , Tipo de combustible = " + gasolineType +  "\n , Capacidad del tanque = " + tankCapacity + "\n";
+                + chargerType + "\n , Tipo de combustible = " + gasolineType +  "\n , Capacidad del tanque = " + tankCapacity + "\n, Consumo de bateria = " + batteryConsumption() + "\n, Consumo de gasolina = " + gasolineConsumption() +"\n";
     }
 
     

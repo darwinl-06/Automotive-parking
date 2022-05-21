@@ -12,6 +12,7 @@ public class Parking {
         parking = new Vehicle[ROW][COLUMN];
     }
 
+    //Method to find a empty collum in parking
     public int nullColumn(int row) {
 
         int ind = 10;
@@ -23,6 +24,7 @@ public class Parking {
         return ind;
     }
 
+    //Method to add a vehicle to the parking
     public void addVehicleToParking(Vehicle vehicle) {
         if (vehicle.getTypeVehicle() == TypeVehicle.USED) {
 
@@ -53,8 +55,9 @@ public class Parking {
                 }
             }
         }
-    }
+    }   
 
+    //Method o print the map of the parking
     public String printParking(){
 		String message = "  2014     2013     2012      2011    <2011   \n _______  _______  _______  _______  _______ \n";
 		for (int counter=0; counter<10; counter++){
@@ -102,7 +105,7 @@ public class Parking {
 	}
 
     
-    
+    //Method to show information of a car by the year
     public String showParkingYear(int option) {
         String out = "";
         boolean flag = false;
@@ -145,8 +148,9 @@ public class Parking {
             out += "No se encontro un vehiculo con ese año";
     
         return out;
-    }
+    }   
 
+    //Method to show the newest car in the parking
     public String showNewest() {
         String out = "";
         boolean flag = true;
@@ -161,6 +165,7 @@ public class Parking {
         return out;
     }
     
+    //Method to show the oldest car in the parking
     public String showOldest() {
         String out = "";
         boolean flag = true;
@@ -173,8 +178,9 @@ public class Parking {
             }
         }
         return out;
-    }
+    }       
 
+    //Method to show the percentage of occupation of the parking
     public double showOccupation() {
         double cont = 0;
         for (int i = 0; i < parking.length; i++) {

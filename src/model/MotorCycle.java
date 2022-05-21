@@ -13,6 +13,7 @@ public class MotorCycle extends Vehicle implements GasolineConsumption {
         this.type = type;
     }
 
+    //Method to calcule the sale price of the motrocycle
     public double calculateSalePrice() {
 
         double price= super.getBasePrice() * 1.04;
