@@ -5,10 +5,10 @@ public class MotorCycle extends Vehicle implements GasolineConsumption {
     private double gasolineCapacity;
     private MotorCycleType type;
     
-    public MotorCycle(double basePrice, double price, String brand, String model, String cylinder, int mileage,
-            String plate, double gasolineCapacity, MotorCycleType type) {
+    public MotorCycle(double basePrice, double price, String brand, String model, double cylinder, double mileage,
+            String plate, double gasolineCapacity, MotorCycleType type,  TypeVehicle typeVehicle) {
                 
-        super(basePrice, price, brand, model, cylinder, mileage, plate);
+        super(basePrice, price, brand, model, cylinder, mileage, plate, typeVehicle);
         this.gasolineCapacity = gasolineCapacity;
         this.type = type;
     }

@@ -2,14 +2,14 @@ package model;
 
 import java.util.ArrayList;
 
-public class Documents {
+public class Document {
 
     private double price;
     private int year;
 
     private ArrayList<int[][]> image;
 
-    public Documents(double price, int year) {
+    public Document(double price, int year) {
 
         this.price = price;
         this.year = year;

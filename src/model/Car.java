@@ -1,40 +1,17 @@
 package model;
 
-public class Car extends Vehicle {
+public abstract class Car extends Vehicle {
 
     private int numDoors;
     private boolean isPolarized;
     private CarType type;
 
-    public Car(double basePrice, double price, String brand, String model, String cylinder, int mileage, String plate, CarType type, int numDoors, boolean isPolarized) {
+    public Car(double basePrice, double price, String brand, String model, double cylinder, double mileage, String plate, 
+    CarType type, int numDoors, boolean isPolarized, TypeVehicle typeVehicle) {
         
-        super(basePrice, price, brand, model, cylinder, mileage, plate);
+        super(basePrice, price, brand, model, cylinder, mileage, plate, typeVehicle);
         this.type = type;
         this.numDoors = numDoors;
-        this.isPolarized = isPolarized;
-    }
-
-    public CarType getType() {
-        return type;
-    }
-
-    public void setType(CarType type) {
-        this.type = type;
-    }
-
-    public int getNumDoors() {
-        return numDoors;
-    }
-
-    public void setNumDoors(int numDoors) {
-        this.numDoors = numDoors;
-    }
-
-    public boolean isPolarized() {
-        return isPolarized;
-    }
-    
-    public void setPolarized(boolean isPolarized) {
         this.isPolarized = isPolarized;
     }
 

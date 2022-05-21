@@ -1,21 +1,20 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Vehicle {
 
     private double basePrice;
     private double price;
     private String brand;
     private String model;
-    private String cylinder;
-    private int mileage;
+    private double cylinder;
+    private double mileage;
     private String plate;
+    private TypeVehicle typeVehicle;
 
-    private ArrayList<Documents[]> documents;
+    private Document [] documents;
     
 
-    public Vehicle(double basePrice, double price, String brand, String model, String cylinder, int mileage, String plate) {
+    public Vehicle(double basePrice, double price, String brand, String model, double cylinder, double mileage, String plate, TypeVehicle typeVehicle) {
 
         this.basePrice = basePrice;
         this.price = price;
@@ -24,9 +23,31 @@ public class Vehicle {
         this.cylinder = cylinder;
         this.mileage = mileage;
         this.plate = plate;
+        this.typeVehicle = typeVehicle;
 
-        documents = new ArrayList<Documents[]> ();
+        documents = new Document[3];
   
+    }
+
+    public boolean addDocument(Soat document) {
+
+        documents[0]= document;
+        
+        return true;
+    }
+
+    public boolean addDocument(TechnicalReview document) {
+        
+        documents[1]= document;
+        
+        return true;
+    }
+
+    public boolean addDocument(PropertyCard document) {
+        
+        documents[2]= document;
+        
+        return true;
     }
 
     public double getBasePrice() {
@@ -61,19 +82,19 @@ public class Vehicle {
         this.model = model;
     }
 
-    public String getCylinder() {
+    public double getCylinder() {
         return cylinder;
     }
 
-    public void setCylinder(String cylinder) {
+    public void setCylinder(double cylinder) {
         this.cylinder = cylinder;
     }
 
-    public int getMileage() {
+    public double getMileage() {
         return mileage;
     }
 
-    public void setMileage(int mileage) {
+    public void setMileage(double mileage) {
         this.mileage = mileage;
     }
 
@@ -83,6 +104,14 @@ public class Vehicle {
 
     public void setPlate(String plate) {
         this.plate = plate;
+    }
+
+    public TypeVehicle getTypeVehicle() {
+        return typeVehicle;
+    }
+
+    public void setTypeVehicle(TypeVehicle typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 
     @Override

@@ -1,10 +1,10 @@
 package model;
 
-public class TechnicalReview extends Documents {
+public class TechnicalReview extends Document {
 
     private double gasLevels;
 
-    public TechnicalReview(double price, int year, double gasLevels) {
+    public TechnicalReview(double price,int year, double gasLevels ) {
         super(price, year);
         this.gasLevels = gasLevels;
     }

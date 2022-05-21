@@ -7,11 +7,11 @@ public class HybridCar extends Car {
     private double tankCapacity;
     private GasolineType gasolineType;
 
-    public HybridCar(double basePrice, double price, String brand, String model, String cylinder, int mileage,
+    public HybridCar(double basePrice, double price, String brand, String model, double cylinder, double mileage,
             String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife,
-            double tankCapacity, GasolineType gasolineType) {
+            double tankCapacity, GasolineType gasolineType,  TypeVehicle typeVehicle) {
 
-        super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized);
+        super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized, typeVehicle);
         this.chargerType = chargerType;
         this.batteryLife = batteryLife;
         this.tankCapacity = tankCapacity;
