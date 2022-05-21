@@ -412,9 +412,9 @@ public class Counselor {
         return out;
     }
 
-    public void showMapParking() {
+    public String showMapParking() {
 
-        parking.printParking();
+        return parking.printParking();
     }
 
     public String showReportsParkingYears( int option) { 
@@ -438,7 +438,7 @@ public class Counselor {
         return out;
     }
 
-    public String showPercentageOccupation() {
+    public String showPercentageOcupation() {
 
         return parking.showOcupation() + "%";
     }

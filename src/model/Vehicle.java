@@ -131,7 +131,7 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return " Precio base = " + basePrice + " , Marca = " + brand + " , Capacidad de cilindraje = " + cylinder + " , Kilometraje = " + mileage + " , Modelo = " + model + " , Placa = " + plate + " , precio de venta = " + price;
+        return "*********************\n"+" Precio base = " + basePrice + "\n , Marca = " + brand + "\n , Capacidad de cilindraje = " + cylinder + "\n , Kilometraje = " + mileage + "\n , Modelo = " + model + "\n , Placa = " + plate + "\n , precio de venta = " + price + "\n" ;
     }
 
     

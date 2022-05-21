@@ -243,10 +243,10 @@ public class Main {
 	}
 
 	public void regisSoat(int id) {
-        System.out.println("Ingrese el precio del documento");
+        System.out.println("Ingrese el precio del SOAT");
 		double price =sc.nextDouble();
 
-		System.out.println("Ingrese el año de vencimiento del vehiculo");
+		System.out.println("Ingrese el año de vencimiento del documento");
 		int year=sc.nextInt();
 
 		System.out.println("Ingrese el monto de cobertura por accidentes");
@@ -256,7 +256,7 @@ public class Main {
     }
 
     public void regisReview(int id) {
-		System.out.println("Ingrese el precio del documento");
+		System.out.println("Ingrese el precio de la revision tecnico mecanica");
 		double price =sc.nextDouble();
 
 		System.out.println("Ingrese el año de vencimiento del documento");
@@ -270,10 +270,10 @@ public class Main {
 
     public void regisCard(int id) {
 
-        System.out.println("Ingrese el precio del documento");
+        System.out.println("Ingrese el precio dela tarjeta de propiedad");
 		double price =sc.nextDouble();
 
-		System.out.println("Ingrese el año de vencimiento del vehiculo");
+		System.out.println("Ingrese el año de vencimiento del documento");
 		int year=sc.nextInt();
      
         cs.addDocumentCard(id, price,year);
@@ -326,7 +326,7 @@ public class Main {
 
 	public void showParking() {
 
-		cs.showMapParking();
+		System.out.println(cs.showMapParking());
 
 	}
 
@@ -346,11 +346,11 @@ public class Main {
                 System.out.println("Que vehiculo quiere buscar 1. Mas nuevo 2. Mas viejo");
                 int option2 = sc.nextInt();
 
-				cs.showReportsParkingUse(option2);
+				System.out.println(cs.showReportsParkingUse(option2));
     
                 break;
             case 3:  
-                System.out.println(cs.showPercentageOccupation());
+                System.out.println(cs.showPercentageOcupation());
                 break;
         }
     }

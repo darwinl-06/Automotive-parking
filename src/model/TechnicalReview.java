@@ -19,7 +19,7 @@ public class TechnicalReview extends Document {
 
     @Override
     public String toString() {
-        return super.toString() + " , Niveles de gas = " + gasLevels;
+        return super.toString() + "\n , Niveles de gas = " + gasLevels + "\n";
     }
 
     

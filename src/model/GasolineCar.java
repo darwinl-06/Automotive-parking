@@ -52,7 +52,7 @@ public class GasolineCar extends Car implements GasolineConsumption {
 
     @Override
     public String toString() {
-        return super.toString() + " , Tipo de combustible = " + gasolineType + " , Capacidad del tanque = " + tankCapacity;
+        return super.toString() + "\n , Tipo de combustible = " + gasolineType + "\n , Capacidad del tanque = " + tankCapacity + "\n";
     }
 
     

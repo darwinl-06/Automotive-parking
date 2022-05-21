@@ -59,7 +59,7 @@ public class ElectricCar extends Car implements BatteryConsumption {
 
     @Override
     public String toString() {
-        return super.toString() + " , Duracion de bateria = " + batteryLife + " , Tipo de cargador = " + chargerType;
+        return super.toString() + "\n , Duracion de bateria = " + batteryLife + "\n , Tipo de cargador = " + chargerType + "\n";
     }
     
 

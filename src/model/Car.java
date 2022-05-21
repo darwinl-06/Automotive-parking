@@ -17,7 +17,7 @@ public abstract class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return super.toString() + " , Tipo de carro = " + type + " , Polarizado = " + isPolarized + " , Numero de puertas = " + numDoors;
+        return super.toString() + "\n , Tipo de carro = " + type + "\n , Polarizado = " + isPolarized + "\n , Numero de puertas = " + numDoors + "\n";
     }
 
     

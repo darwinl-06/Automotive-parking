@@ -55,31 +55,53 @@ public class Parking {
         }
     }
 
-    public String printParking() {
+    public String printParking(){
+		String message = "  2014     2013     2012      2011    <2011   \n _______  _______  _______  _______  _______ \n";
+		for (int counter=0; counter<10; counter++){
+			for (int counter2=0; counter2<4; counter2++){
+				for (int counter3=0; counter3<5; counter3++){
+					if(parking[counter][counter3]==null){
+						if(counter2!=3){
+							message += "|       |";
+						}
+					}
+					else if (parking[counter][counter3] instanceof Car){
+						switch (counter2){
+							case (0):
+								message += "|  __   |";
+								break;
+							case(1):
+								message += "|_|  |__|";
+								break;
+							case(2):
+								message += "|-O---O-|";
+								break;		
+						}
+					}
+					else if (parking[counter][counter3] instanceof MotorCycle){
+						switch (counter2){
+							case (0):
+								message += "|     _ |";
+								break;
+							case(1):
+								message += "|   _ | |";
+								break;
+							case(2):
+								message += "|  O--O |";
+								break;		
+						}
+					}
+					if (counter2==3){
+						message += " ------- ";
+					}
+				}
+				message += "\n";
+			}
+		}
+		return message;
+	}
 
-
-        String out="MAPA PARQUEADERO "+"\n\n";
-        
-        
-          out+="|    2014     |     2013    |    2012     |    2011     |    2010>    | "+ "\n" + "**********************************************************************"+"\n";
-        
-        for(int i=0;i<parking.length;i++){
-            for(int x=0;x<parking[0].length;x++){
-        
-                if(parking[i][x]==null){
-        
-                    out+="*   (vacio)  *";
-        
-                } else 
-                    out+="* (ocupado) *";
-                }
-        
-        
-        out+="\n"+"**********************************************************************"+"\n";
-        
-        }
-         return out;
-        }
+    
     
     public String showParkingYear(int option) {
         String out = "";
@@ -154,15 +176,15 @@ public class Parking {
     }
 
     public double showOcupation() {
-        double counter = 0;
+        double cont = 0;
         for (int i = 0; i < parking.length; i++) {
             for (int j = 0; j < parking[0].length; j++) {
                 if (parking[i][j] != null) {
-                    counter++;
+                    cont++;
                 }
             }
         }
-        return (counter/(ROW*COLUMN))*100;
+        return (cont/(ROW*COLUMN))*100;
     }
 
 }

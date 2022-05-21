@@ -89,8 +89,8 @@ public class HybridCar extends Car implements GasolineConsumption, BatteryConsum
 
     @Override
     public String toString() {
-        return super.toString() + " , Duracion de bateria = " + batteryLife + " , Tipo de cargador = "
-                + chargerType + " , Tipo de combustible = " + gasolineType +  " , Capacidad del tanque = " + tankCapacity;
+        return super.toString() + "\n , Duracion de bateria = " + batteryLife + "\n , Tipo de cargador = "
+                + chargerType + "\n , Tipo de combustible = " + gasolineType +  "\n , Capacidad del tanque = " + tankCapacity + "\n";
     }
 
     

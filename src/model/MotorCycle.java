@@ -52,7 +52,7 @@ public class MotorCycle extends Vehicle implements GasolineConsumption {
 
     @Override
     public String toString() {
-        return super.toString() + " , Capacidad del tanque = " + gasolineCapacity + " , Tipo de motocicleta = " + type;
+        return super.toString() + "\n , Capacidad del tanque = " + gasolineCapacity + "\n , Tipo de motocicleta = " + type + "\n";
     }
 
     
