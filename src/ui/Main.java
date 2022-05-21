@@ -13,6 +13,7 @@ public class Main {
 	public Main() {
 
 		sc= new Scanner(System.in);
+		cs= new Counselor();
 	}
 
 	public static void main(String [] args) {
@@ -59,23 +60,20 @@ public class Main {
 			registerVehicle();
 			break;
 		case 2:
-			
+			calculatePrice();
 			break;
-	
 		case 3:
-			
+			showReports();
 			break;
-
 		case 4:
-			
+			showDocuments();
 			break;
 
         case 5:
-			
+			showParking();
 			break;
-
         case 6:
-			
+			showReportsParking();
 			break;
 		
 		default:
@@ -86,9 +84,6 @@ public class Main {
 
 	public void registerVehicle() {
 
-		System.out.println("Que vehiculo desea registrar? 1. Carro a gasolina 2. Carro electrico  3. Carro hibrido 4. Motocicleta");
-        int option = sc.nextInt();
-
         System.out.println("Ingrese el precio base del vehiculo ");
         double basePrice = sc.nextDouble();
 
@@ -98,8 +93,8 @@ public class Main {
         System.out.println("Ingrese la marca del vehiculo ");
         String brand = sc.next();
 
-        System.out.println("ingrese el model del vehiculo ");
-        String model = sc.next();
+        System.out.println("ingrese el modelo del vehiculo ");
+        int model = sc.nextInt();
 
         System.out.println("Ingrese la capacidad del cilindro ");
         double cylinder = sc.nextDouble();
@@ -119,6 +114,9 @@ public class Main {
 			
         }
 
+		System.out.println("Que vehiculo desea registrar? 1. Carro a gasolina 2. Carro electrico  3. Carro hibrido 4. Motocicleta");
+        int option = sc.nextInt();
+
 		if(option ==4) {
  
 			System.out.println("Ingrese la capacidad del tanque");
@@ -131,21 +129,9 @@ public class Main {
 
 			if (optionVehicle == 2) { 
 
-				System.out.println("Ingrese el precio");
-				double soatPrice =sc.nextDouble();
-
-				System.out.println("Ingrese el año de vencimiento del vehiculo");
-				int year=sc.nextInt();
-
-				System.out.println("Ingrese el monto de cobertura por accidentes");
-				 double cover=sc.nextDouble();
-
-				System.out.println("Ingrese los niveles de gas del vehiculo");
-				double gasLevels = sc.nextDouble();
-
-				cs.addDocumentSoat(id, soatPrice, year, cover);
-				cs.addDocumentReview(id, price, year, gasLevels);
-				cs.addDocumentCard(id, price, year);
+				regisSoat(id);
+				regisReview(id);
+				regisCard(id);
 
 			} else if (optionVehicle == 1) {
 
@@ -186,21 +172,9 @@ public class Main {
                 
 				if (optionVehicle == 2) { 
 
-					System.out.println("Ingrese el precio");
-					double soatPrice =sc.nextDouble();
-
-					System.out.println("Ingrese el año de vencimiento del vehiculo");
-					int year=sc.nextInt();
-
-					System.out.println("Ingrese el monto de cobertura por accidentes");
-					 double cover=sc.nextDouble();
-
-					System.out.println("Ingrese los niveles de gas del vehiculo");
-					double gasLevels = sc.nextDouble();
-
-					cs.addDocumentSoat(id, soatPrice, year, cover);
-					cs.addDocumentReview(id, price, year, gasLevels);
-					cs.addDocumentCard(id, price, year);
+					regisSoat(id);
+					regisReview(id);
+					regisCard(id);
 
 				} else if (optionVehicle == 1) {
 
@@ -224,21 +198,9 @@ public class Main {
                     
 					if (optionVehicle == 2) { 
 
-						System.out.println("Ingrese el precio");
-						double soatPrice =sc.nextDouble();
-
-						System.out.println("Ingrese el año de vencimiento del vehiculo");
-						int year=sc.nextInt();
-
-						System.out.println("Ingrese el monto de cobertura por accidentes");
-		 				double cover=sc.nextDouble();
-
-						System.out.println("Ingrese los niveles de gas del vehiculo");
-						double gasLevels = sc.nextDouble();
-
-						cs.addDocumentSoat(id, soatPrice, year, cover);
-						cs.addDocumentReview(id, price, year, gasLevels);
-						cs.addDocumentCard(id, price, year);
+						regisSoat(id);
+						regisReview(id);
+						regisCard(id);
 
                     } else if (optionVehicle == 1) {
 
@@ -261,21 +223,9 @@ public class Main {
 
 					if (optionVehicle == 2) { 
 
-						System.out.println("Ingrese el precio");
-						double soatPrice =sc.nextDouble();
-
-						System.out.println("Ingrese el año de vencimiento del vehiculo");
-						int year=sc.nextInt();
-
-						System.out.println("Ingrese el monto de cobertura por accidentes");
-		 				double cover=sc.nextDouble();
-
-						System.out.println("Ingrese los niveles de gas del vehiculo");
-						double gasLevels = sc.nextDouble();
-
-						cs.addDocumentSoat(id, soatPrice, year, cover);
-						cs.addDocumentReview(id, price, year, gasLevels);
-						cs.addDocumentCard(id, price, year);
+						regisSoat(id);
+						regisReview(id);
+						regisCard(id);
 
                     } else if (optionVehicle == 1) {
 
@@ -287,21 +237,123 @@ public class Main {
                     }
                     
                 } 
+			}
 
 		}	
 	}
+
+	public void regisSoat(int id) {
+        System.out.println("Ingrese el precio del documento");
+		double price =sc.nextDouble();
+
+		System.out.println("Ingrese el año de vencimiento del vehiculo");
+		int year=sc.nextInt();
+
+		System.out.println("Ingrese el monto de cobertura por accidentes");
+		double cover=sc.nextDouble();
         
-	}
+        cs.addDocumentSoat(id,price, year, cover );
+    }
+
+    public void regisReview(int id) {
+		System.out.println("Ingrese el precio del documento");
+		double price =sc.nextDouble();
+
+		System.out.println("Ingrese el año de vencimiento del documento");
+		int year=sc.nextInt();
+
+        System.out.println("Ingrese los niveles de gas del vehiculo");
+		double gasLevels = sc.nextDouble();;
+        
+        cs.addDocumentReview(id, price, year, gasLevels);
+    }
+
+    public void regisCard(int id) {
+
+        System.out.println("Ingrese el precio del documento");
+		double price =sc.nextDouble();
+
+		System.out.println("Ingrese el año de vencimiento del vehiculo");
+		int year=sc.nextInt();
+     
+        cs.addDocumentCard(id, price,year);
+    }
+    
 
 	public void calculatePrice() {
 
-		System.out.println("Ingrese el id del vehiculo del que quiere sber el precio de venta");
+		System.out.println("Ingrese el id del vehiculo del que quiere saber el precio de venta");
 		int id = sc.nextInt();
 
 		System.out.println(cs.calculateSalePrice(id));
 	}
+	
 
+	public void showReports() { 
+    
+        System.out.println("Como quiere generar el informe 1. Tipo de vehiculo 2. Tipo de combusible 3. Carro nuevo o usado");
+        int option = sc.nextInt();
+    
+        switch (option) {
+            case 1:
+                System.out.println("De que tipo de vehiculo quiere generar el informe 1. Carro a gasolina 2. Carro electrico 3. Carro hibrido" + "4. Motocicleta");
+                int option1 = sc.nextInt();
 
+                System.out.println(cs.showReportsTypeVehicle(option1));
+                break;
+            case 2:
+                System.out.println("De que tipo de combustible quiere generar el informe 1. Extra 2. Regular 3. Diesel");
+                int option2 = sc.nextInt();
+    
+                System.out.println(cs.showReportsTypeFuel(option2));
+                break;
+            case 3:  
+                System.out.println("De que tipo de vehiculo quiere generar el informe 1.Nuevo 2.Usado");
+				int option3 = sc.nextInt();
+   
+                System.out.println(cs.showReportsUse(option3));  
+                break;
+        }
+    }
+
+	public void showDocuments() {
+        System.out.println("Ingrese el id del vehiculo del cual quiere ver sus documentos");
+        int id = sc.nextInt();
+       
+        System.out.println(cs.showDocuments(id));
+        
+    }
+
+	public void showParking() {
+
+		cs.showMapParking();
+
+	}
+
+	public void showReportsParking() { 
+    
+        System.out.println("Como quiere generar el informe 1. Dado un rango de años 2. Vehículo más antiguo y más nuevo. 3. Porcentaje de ocupación del parqueadero");
+        int option = sc.nextInt();
+    
+        switch (option) {
+            case 1:
+                System.out.println("Ingrese que año quiere buscar 1. 2014 2. 2013 3. 2012 4. 2011 5. 2011>");
+                int option1 = sc.nextInt();
+
+                System.out.println(cs.showReportsParkingYears(option1));
+                break;
+            case 2:
+                System.out.println("Que vehiculo quiere buscar 1. Mas nuevo 2. Mas viejo");
+                int option2 = sc.nextInt();
+
+				cs.showReportsParkingUse(option2);
+    
+                break;
+            case 3:  
+                System.out.println(cs.showPercentageOccupation());
+                break;
+        }
+    }
 
 }
 

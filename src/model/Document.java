@@ -35,7 +35,7 @@ public class Document {
 
     @Override
     public String toString() {
-        return "price=" + price + " year=" + year + " image=" + image ;
+        return " , Precio = " + price + " , Año de vencimiento = " + year + " , Imagen = " + image ;
     }
     
     

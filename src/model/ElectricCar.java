@@ -5,7 +5,7 @@ public class ElectricCar extends Car implements BatteryConsumption {
     private ChargerType chargerType;
     private double batteryLife;
 
-    public ElectricCar(double basePrice, double price, String brand, String model, double cylinder, double mileage,
+    public ElectricCar(double basePrice, double price, String brand, int model, double cylinder, double mileage,
             String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife, TypeVehicle typeVehicle) {
         
         super(basePrice, price, brand, model, cylinder, mileage, plate, type, numDoors, isPolarized, typeVehicle);
@@ -14,10 +14,31 @@ public class ElectricCar extends Car implements BatteryConsumption {
         
     }
 
+    public double calculateSalePrice() {
+        
+        double price= super.getBasePrice() * 1.20;
+        if (super.getTypeVehicle() == TypeVehicle.USED) {
+            price -= super.getBasePrice()*0.10;
+        }
+        
+        if (super.getSoat() == null ||super.getSoat().getYear() < 2022 ||super.getTechnicalReview() == null ||super.getTechnicalReview().getYear() < 2022 ) {
+            price += 500000;            
+        }
+        return price;
+    }
+    
+
     @Override
     public double batteryConsumption() {
-     
-        return 0;
+
+        double batteryConsumption = 0;
+
+        if (chargerType== ChargerType.NORMAL) {
+             batteryConsumption = (batteryLife+7) * (super.getCylinder()/200);
+        } else if (chargerType == ChargerType.FAST) {
+            batteryConsumption = batteryLife * (super.getCylinder()/200); 
+        }
+        return batteryConsumption;
     }
 
     public ChargerType getChargerType() {
@@ -38,8 +59,9 @@ public class ElectricCar extends Car implements BatteryConsumption {
 
     @Override
     public String toString() {
-        return ", batteryLife=" + batteryLife + ", chargerType=" + chargerType;
+        return super.toString() + " , Duracion de bateria = " + batteryLife + " , Tipo de cargador = " + chargerType;
     }
+    
 
 
 }

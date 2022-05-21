@@ -1,13 +1,13 @@
 package model;
 
-public class HybridCar extends Car {
+public class HybridCar extends Car implements GasolineConsumption, BatteryConsumption  {
 
     private ChargerType chargerType;
     private double batteryLife;
     private double tankCapacity;
     private GasolineType gasolineType;
 
-    public HybridCar(double basePrice, double price, String brand, String model, double cylinder, double mileage,
+    public HybridCar(double basePrice, double price, String brand, int model, double cylinder, double mileage,
             String plate, CarType type, int numDoors, boolean isPolarized, ChargerType chargerType, double batteryLife,
             double tankCapacity, GasolineType gasolineType,  TypeVehicle typeVehicle) {
 
@@ -17,6 +17,42 @@ public class HybridCar extends Car {
         this.tankCapacity = tankCapacity;
         this.gasolineType = gasolineType;
     
+    }
+
+    public double calculateSalePrice() {
+
+        double price= super.getBasePrice() * 1.15;
+        if (super.getTypeVehicle() == TypeVehicle.USED) {
+            price -= super.getBasePrice()*0.10;
+        }
+        
+        if (super.getSoat() == null ||super.getSoat().getYear() < 2022 ||super.getTechnicalReview() == null ||super.getTechnicalReview().getYear() < 2022 ) {
+            price += 500000;            
+        }
+        return price;
+    }
+
+    @Override
+    public double batteryConsumption() {
+
+        double batteryConsumption = 0;
+
+        if (chargerType== ChargerType.NORMAL) {
+             batteryConsumption = (batteryLife+7) * (super.getCylinder()/200);
+        } else if (chargerType == ChargerType.FAST) {
+            batteryConsumption = batteryLife * (super.getCylinder()/200); 
+        }
+        return batteryConsumption;
+    }
+
+
+     @Override
+    public double gasolineConsumption() {
+
+        double consumption = tankCapacity *(super.getCylinder()/180);
+
+        return consumption;
+
     }
 
     public ChargerType getChargerType() {
@@ -53,8 +89,8 @@ public class HybridCar extends Car {
 
     @Override
     public String toString() {
-        return ", batteryLife=" + batteryLife + ", chargerType="
-                + chargerType + ", gasolineType=" + gasolineType +  ", tankCapacity=" + tankCapacity;
+        return super.toString() + " , Duracion de bateria = " + batteryLife + " , Tipo de cargador = "
+                + chargerType + " , Tipo de combustible = " + gasolineType +  " , Capacidad del tanque = " + tankCapacity;
     }
 
     

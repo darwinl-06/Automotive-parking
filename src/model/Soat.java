@@ -19,7 +19,7 @@ public class Soat extends Document {
 
     @Override
     public String toString() {
-        return "coverage=" + coverage;
+        return super.toString() + " , Monto de covertura por accidentes = " + coverage;
     }
 
     
